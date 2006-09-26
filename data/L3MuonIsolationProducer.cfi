@@ -1,0 +1,16 @@
+module L3MuonIsolationBBB = L3MuonIsolationProducer {
+      untracked string MuonCollectionLabel = "L2Muons"
+      untracked string TrackCollectionLabel = "pixelTracks"
+      untracked string DepositLabel = "PXLS"
+
+      vdouble EtaBounds = { 999.9 }
+      vdouble Thresholds = { 0.2 } 
+      vdouble ConeSizes = { 0.6 }
+
+      double diff_r = 0.1
+      double diff_z = 20.2
+      double pt_Min = 0.9
+      double dR_Match = 0.015
+      double dR_Veto = 0.005
+      double dR_Max = 1.0
+}
