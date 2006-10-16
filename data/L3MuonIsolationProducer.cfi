@@ -1,4 +1,4 @@
-module L3MuonIsolationBBB = L3MuonIsolationProducer {
+module L3MuonIsolations = L3MuonIsolationProducer {
       untracked string MuonCollectionLabel = "L2Muons"
       untracked string TrackCollectionLabel = "pixelTracks"
       untracked string DepositLabel = "PXLS"
