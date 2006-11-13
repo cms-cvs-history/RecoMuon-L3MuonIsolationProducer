@@ -1,5 +1,5 @@
 module L3MuonIsolations = L3MuonIsolationProducer {
-      untracked string MuonCollectionLabel = "L2Muons"
+      untracked string MuonCollectionLabel = "L3Muons"
 
       vdouble EtaBounds = { 999.9 }
       vdouble ConeSizes = { 0.6 }
