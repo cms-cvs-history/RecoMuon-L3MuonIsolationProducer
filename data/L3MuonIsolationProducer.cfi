@@ -14,7 +14,7 @@ module L3MuonIsolations = L3MuonIsolationProducer {
             //double Pt_Min = 0.9
             double Diff_r = 0.1
             double Diff_z = 20.2
-            double DR_Veto = 0.005
+            double DR_Veto = 0.010
             double DR_Max = 1.0
       }
 
