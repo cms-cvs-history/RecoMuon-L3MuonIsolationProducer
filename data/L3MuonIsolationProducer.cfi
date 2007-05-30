@@ -4,8 +4,8 @@ module L3MuonIsolations = L3MuonIsolationProducer {
       PSet CutsPSet = {
         string ComponentName = "SimpleCuts"
         vdouble EtaBounds = { 999.9 }
-        vdouble ConeSizes = { 0.6 }
-        vdouble Thresholds = { 0.2 } 
+        vdouble ConeSizes = { 0.24 }
+        vdouble Thresholds = { 2.0 } 
       }
 
 # Uncomment to set the cut based on nominal efficiency
@@ -15,18 +15,17 @@ module L3MuonIsolations = L3MuonIsolationProducer {
 #        string LumiOption = "2E33"
 #        double NominalEfficiency = 0.97
 #      }
-      bool OutputMuIsoDeposits = true
+      bool OutputMuIsoDeposits = false 
 
       PSet ExtractorPSet = {
          string ComponentName = "TrackExtractor"   
          InputTag inputTrackCollection = pixelTracks
          untracked string DepositLabel = "PXLS"
 
-         //double Pt_Min = 0.9
+         double Pt_Min = 0.9
          double Diff_r = 0.1
-         double Diff_z = 20.2
+         double Diff_z = 0.2
          double DR_Veto = 0.010
          double DR_Max = 1.0
       }
-
 }

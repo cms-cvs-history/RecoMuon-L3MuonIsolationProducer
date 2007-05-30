@@ -1,0 +1,26 @@
+module regionalSeedsForL3Isolation
+   = globalPixelSeeds from "RecoTracker/TkSeedGenerator/data/GlobalPixelSeeds.cfi"
+replace regionalSeedsForL3Isolation.RegionFactoryPSet.ComponentName = "IsolationRegionAroundL3Muon"
+replace regionalSeedsForL3Isolation.RegionFactoryPSet.RegionPSet = {
+    double ptMin = 1.0
+    bool   vertexZConstrained = false
+    double vertexZDefault = 0.0
+    string vertexSrc = ""
+    double originRadius = 0.2
+    double originHalfLength = 15.0
+    double deltaEtaRegion = 0.24
+    double deltaPhiRegion = 0.24
+    InputTag TrkSrc = L3Muons
+}
+
+module regionalCandidatesForL3Isolation = ckfTrackCandidates from 
+    "RecoTracker/CkfPattern/data/CkfTrackCandidates.cfi"
+replace regionalCandidatesForL3Isolation.SeedProducer  = "regionalSeedsForL3Isolation"
+
+module regionalTracksForL3Isolation = ctfWithMaterialTracks from 
+    "RecoTracker/TrackProducer/data/CTFFinalFitWithMaterial.cfi"
+replace regionalTracksForL3Isolation.src = "regionalCandidatesForL3Isolation"
+
+sequence regionalCKFTracksForL3Isolation = {
+  regionalSeedsForL3Isolation, regionalCandidatesForL3Isolation, regionalTracksForL3Isolation 
+}
