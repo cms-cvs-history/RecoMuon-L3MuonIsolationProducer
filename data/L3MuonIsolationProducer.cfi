@@ -17,15 +17,26 @@ module L3MuonIsolations = L3MuonIsolationProducer {
 #      }
       bool OutputMuIsoDeposits = false 
 
+      #make it tighter if desired (if(tk.pt>Pt_Min) sumPt += tk.pt;)
+      #applied after MuIsoDeposits are extracted
+      double TrackPt_Min = -1
+
       PSet ExtractorPSet = {
          string ComponentName = "TrackExtractor"   
          InputTag inputTrackCollection = pixelTracks
          untracked string DepositLabel = "PXLS"
 
-         double Pt_Min = 0.9
          double Diff_r = 0.1
          double Diff_z = 0.2
          double DR_Veto = 0.010
          double DR_Max = 1.0
+
+         string    BeamlineOption = "BeamSpotFromEvent"
+         InputTag  BeamSpotLabel  = offlineBeamSpot
+         uint32      NHits_Min      = 0
+         double    Chi2Ndof_Max   = 1E64
+         double    Chi2Prob_Min   = -1
+         double    Pt_Min   = -1
+
       }
 }
