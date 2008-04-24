@@ -6,6 +6,8 @@ module L3MuonIsolations = L3MuonIsolationProducer {
         vdouble EtaBounds = { 999.9 }
         vdouble ConeSizes = { 0.24 }
         vdouble Thresholds = { 2.0 } 
+	int32 maxNTracks = 9999
+	bool  applyCutsANDmaxNTracks = false
       }
 
 # Uncomment to set the cut based on nominal efficiency
