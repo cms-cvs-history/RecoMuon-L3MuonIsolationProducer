@@ -16,26 +16,36 @@ module L3MuonIsolationProducerPixTE = L3MuonIsolationProducer {
          untracked string DepositLabel = "PXLS"
 
          //double Pt_Min = 0.9
+# |d0| cut on tracks going to the sum
          double Diff_r = 0.1
+# |vzTrack-vzMuon|
          double Diff_z = 0.2
+# do not count within DR_Veto away from this direction
          double DR_Veto = 0.010
+# maximal distance from muon direction to count tracks
          double DR_Max = 0.24
 
+# this is pretty much the only one: read from edm::Event
          string    BeamlineOption = "BeamSpotFromEvent"
+# inputtag for the beam spot object
          InputTag  BeamSpotLabel  = offlineBeamSpot
+# count track if nValidHits >= this
          uint32    NHits_Min      = 0
+# count track if chi2/ndf < this
          double    Chi2Ndof_Max   = 1E64
+# count track if chi2-prob is >= this
          double    Chi2Prob_Min   = -1
+# count track if its pt >= this
          double    Pt_Min   = -1
 
-	#track eta,phi will be taken at this radius if set to true
+#track eta,phi will be taken at this radius (in cm) if set to true
          bool PropagateTracksToRadius = true
 	 double ReferenceRadius       = 6
 
-	#the veto will be set to the leading track above threshold in this cone
+#the veto will be set to the leading track above threshold in this cone
 	bool VetoLeadingTrack = true
 	double PtVeto_Min = 2
-	#this is expected to be bigger than DR_Veto set above by ~x2 or so
+#this is expected to be bigger than DR_Veto set above by ~x2 or so
 	double DR_VetoPt = 0.025
       }
 }
