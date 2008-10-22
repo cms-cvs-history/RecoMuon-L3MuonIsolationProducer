@@ -1,6 +1,0 @@
-include "RecoTracker/TkSeedGenerator/data/GlobalPixelSeeds.cff"
-include "RecoTracker/Configuration/data/RecoTracker.cff"
-include "TrackingTools/Configuration/data/TrackingTools.cff"
-include "RecoMuon/Configuration/data/RecoMuon.cff"
-include "RecoTracker/CkfPattern/data/CkfTrajectoryBuilderESProducer.cff"
-include "RecoMuon/L3MuonIsolationProducer/data/RegionalCKFTracksForL3Isolation.cfi"
